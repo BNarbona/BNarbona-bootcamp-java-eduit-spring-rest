@@ -15,6 +15,9 @@ import javax.validation.constraints.NotNull;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
+import ar.com.educationit.enums.EstadoOrdenEnum;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -53,10 +56,15 @@ public class Orden {
 	@OneToOne
 	@JoinColumn(name="cupones_id", referencedColumnName = "id")
 	private Cupon cupon;
-	
-	/*
+
+	@JsonIgnore
 	public boolean isEstadoFinal() {
+		return this.getEstado().getEstadoFinal().equals(EstadoOrdenEnum.ESTADO_FINAL.getId());
 	}
-	*/
+
+	@JsonIgnore
+	public boolean isCancelada() {
+		return this.getEstado().getId().equals(EstadoOrdenEnum.CANCELADA.getId());
+	}
 	
 }
