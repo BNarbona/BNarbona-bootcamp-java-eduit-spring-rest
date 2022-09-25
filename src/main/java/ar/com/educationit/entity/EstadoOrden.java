@@ -10,12 +10,14 @@ import javax.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 @Entity
-@Table(name ="estado_ordenes")
+@Table(name ="estados_ordenes")
 @Data
 @AllArgsConstructor
+@NoArgsConstructor
 @Builder
 @ToString
 public class EstadoOrden {

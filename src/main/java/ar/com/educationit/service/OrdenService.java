@@ -10,5 +10,7 @@ import ar.com.educationit.entity.Orden;
 public interface OrdenService {
 
 	public List<Orden> findAll();
+
+	public Orden crear(Orden newOrden);
 	
 }

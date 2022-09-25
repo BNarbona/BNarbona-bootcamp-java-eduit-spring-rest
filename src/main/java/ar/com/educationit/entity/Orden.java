@@ -18,12 +18,14 @@ import org.springframework.format.annotation.DateTimeFormat;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 @Entity
 @Table(name = "ordenes")
 @Data
 @AllArgsConstructor
+@NoArgsConstructor
 @Builder
 @ToString
 public class Orden {

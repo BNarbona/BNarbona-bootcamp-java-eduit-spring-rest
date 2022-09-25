@@ -15,8 +15,19 @@ import javax.validation.constraints.NotNull;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
+
 @Entity
 @Table(name="cupones")
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
+@ToString
 public class Cupon {
 
 	@Id
@@ -47,53 +58,5 @@ public class Cupon {
 	@Column(name="descuento", nullable=true)
 	private Double descuento;
 	
-	public Long getId() {
-		return id;
-	}
-	
-	public void setId(Long id) {
-		this.id = id;
-	}
-	
-	public String getNombre() {
-		return nombre;
-	}
-	
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
-	}
-	
-	public String getCodigo() {
-		return codigo;
-	}
-	
-	public void setCodigo(String codigo) {
-		this.codigo = codigo;
-	}
-	
-	public Date getFechaVigenciaDesde() {
-		return fechaVigenciaDesde;
-	}
-	
-	public void setFechaVigenciaDesde(Date fechaVigenciaDesde) {
-		this.fechaVigenciaDesde = fechaVigenciaDesde;
-	}
-	
-	public Date getFechaVigenciaHasta() {
-		return fechaVigenciaHasta;
-	}
-	
-	public void setFechaVigenciaHasta(Date fechaVigenciaHasta) {
-		this.fechaVigenciaHasta = fechaVigenciaHasta;
-	}
-	
-	public Double getDescuento() {
-		return descuento;
-	}
-	
-	public void setDescuento(Double descuento) {
-		this.descuento = descuento;
-	}
-
 
 }
