@@ -8,6 +8,7 @@ import java.util.List;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -32,6 +33,9 @@ public class OrderResourse {
 	
 	@Autowired
 	private RestTemplate restTemplateClient;
+	
+	@Value("${spring.external.service-socios-url}")
+	private String sociosPathUrlBase;
 	
 	//GET all
 	@GetMapping(value="/orden", produces="application/json")
