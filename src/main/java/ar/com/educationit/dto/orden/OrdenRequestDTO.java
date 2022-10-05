@@ -22,18 +22,16 @@ import lombok.ToString;
 @ToString
 public class OrdenRequestDTO {
 
-	@NotNull
+	
 	private Long ordenId;
 	
 	@NotNull
-	@Min(value = 1)
 	private Long estadoOrdenId;
 	
 	@NotNull
 	private Long socioId;
 	
 	@NotNull
-	@Min(value = 0)
 	private Double montoTotal;
 	
 	private Long cuponId;

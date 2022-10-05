@@ -32,7 +32,7 @@ import ar.com.educationit.enums.EstadoOrdenEnum;
 import ar.com.educationit.service.OrdenService;
 
 @RestController
-public class OrderResourse {
+public class OrderResource {
 	
 	@Autowired
 	private OrdenService ordenService; 
@@ -56,9 +56,9 @@ public class OrderResourse {
 			) throws URISyntaxException{
 		
 		//http://localhost:8081/socio/ordenRequestDTO.getSocioId() => socio
-	//	RestTemplate restTemplateClient = new RestTemplate(); 
+		//RestTemplate restTemplateClient = new RestTemplate(); 
 		SocioDTO socioDTO =restTemplateClient.
-			getForObject("http://localhost:8081/socio/"+ordenRequestDTO.getSocioId(), SocioDTO.class);
+			getForObject(sociosPathUrlBase +"/socio/"+ ordenRequestDTO.getSocioId(), SocioDTO.class);
 		
 		if(socioDTO == null) {
 			return ResponseEntity.badRequest().build();
